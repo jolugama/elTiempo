@@ -1,0 +1,194 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family:'Indie Flower',Oswald;
+  font-size: 2.0em;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+
+
+}
+
+
+
+td {
+  padding-left: 15px;
+}
+table{
+ margin: 0 auto;
+}
+
+input{
+  margin-bottom: 10px;
+}
+button{
+  margin-left:15px;
+}
+
+.cabeceraDatos{
+  background-color:#0d0;
+  padding:15px;
+  
+  margin:10px; 
+  width:150px; 
+  text-align:center;
+  -webkit-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  -moz-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+
+  border-radius: 0px 200px 0px 200px;
+  -moz-border-radius: 0px 200px 0px 200px;
+  -webkit-border-radius: 0px 200px 0px 200px;
+
+}
+
+.datos{
+  background-color:#94FF00;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
+  -webkit-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  -moz-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+}
+
+.datosGenerales{
+  background-color: #FF7D32;
+  -webkit-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  -moz-box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+  box-shadow: 7px 9px 32px 0px rgba(0,0,0,0.71);
+}
+
+
+
+
+#buscador.ng-show{
+  -webkit-animation: lightSpeedIn 1s;
+  -moz-animation: lightSpeedIn 1s;
+  -ms-animation: lightSpeedIn 1s;
+  animation: lightSpeedIn 1s;
+}
+
+
+#prediccion.ng-hide-remove{
+  -webkit-animation: bounceInLeft 2s;
+  -moz-animation: bounceInLeft 2s;
+  -ms-animation: bounceInLeft 2s;
+  animation: bounceInLeft 2s;
+}
+
+
+#prediccion.ng-hide-add{
+  -webkit-animation: bounceOutRight 2s;
+  -moz-animation: bounceOutRight 2s;
+  -ms-animation: bounceOutRight 2s;
+  animation: bounceOutRight 2s;
+}
+
+
+.cabeceraDatos{
+  -webkit-animation: zoomIn 2s;
+  -moz-animation: zoomIn 2s;
+  -ms-animation: zoomIn 2s;
+  animation: zoomIn 2s;
+}
+
+.datos,.datos.ng-click{
+  -webkit-animation: bounceInRight 2s;
+  -moz-animation: bounceInRight 2s;
+  -ms-animation: bounceInRight 2s;
+  animation: bounceInRight 2s;
+}
+
+#titulo{
+  -webkit-animation: fadeIn 4s;
+  -moz-animation: fadeIn 4s;
+  -ms-animation: fadeIn 4s;
+  animation: fadeIn 4s;
+}
+
+
+.iconos {
+    -webkit-animation: flipInX 8s;
+     -moz-animation: flipInX 8s;
+  -ms-animation: flipInX 8s;
+    animation: flipInX 8s;
+}
+
+.iconos.ng-leave {
+  -webkit-animation: fadeOut 2s;
+  animation: fadeOut 1s;
+}
