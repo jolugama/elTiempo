@@ -1,0 +1,76 @@
+
+<div class="animated" ng-class="{bounceInRight: animacionBuscador}" ng-show="animacionBuscador=true" ng-init="inicio()">
+	<div class="col-xs-12 col-md-6 col-lg-8">
+		<input type="text"   class="form-control "   ng-model="buscador" ng-change="muestraPorZona(buscador,'es')" ng-click="limpiar()" placeholder="Madrid,es">
+	</div>
+	<button class="btn btn-success" type="button" ng-click="muestraPorGeo()">GeoTiempo</button>
+</div>
+<br>
+<span>{{cargandoDatos}}</span>
+
+<div class=" animated jumbotron colorFondo2 sombreado" ng-class="{'opcionesAnimacion1 bounceInLeft': !animacion, bounceOutRight: animacion}" >
+	<h3 ng-bind-html="posicion.lugar"></h3>
+	<table>
+		<tr><td>Estado:</td><td>{{prediccionActual.estadoCielo}}</td></tr>
+		<tr>
+			<td>
+				<span  class="parpadeoRapido animated " ng-class="{flip: parpadeo}" ng-mouseover="parpadeo=!parpadeo" ng-mouseleave="parpadeo=!parpadeo"><img  ng-src="http://openweathermap.org/img/w/{{prediccionActual.imagen}}.png"/> </span>
+			</td>
+			<td>{{prediccionActual.temperatura}}</td>
+		</tr>
+		<tr>
+			<td>Humedad:</td>
+			<td>{{prediccionActual.humedad}}</td>
+		</tr>
+		<tr>
+			<td>Viento:</td>
+			<td>{{prediccionActual.viento}}</td>
+		</tr>
+		<tr>
+			<td>Nubes:</td>
+			<td>{{prediccionActual.nubes}}</td>
+		</tr>
+		<tr>
+			<td>LLuvia:</td>
+			<td>{{prediccionActual.lluvia}}</td>
+		</tr>
+		<tr>
+			<td>Nieve:</td>
+			<td>{{prediccionActual.nieve}}</td>
+		</tr>
+	</table>
+</div>
+
+
+<div class="animated altura"  ng-class="{'bounceInRight opcionesAnimacion2 altura': !animacion2, 'bounceOutLeft': animacion2}">
+
+	
+	{{posicion.lugar2}}
+	<div data-ng-repeat="x in datosDias" style="text-align:center">
+
+		<div ng-if="x.dt_txt.substr(11,19) === '00:00:00' " >
+			<br><br>
+<!-- clase opcionesAnimacionDias animated se quita ya que en android llega hasta un max y no se ve el resto-->
+			<div class="  cabeceraDatos sombreado" ng-class="{swing: animacionDias, tada: !animacionDias}" ng-click="animacionDias=!animacionDias">{{x.dt_txt.substr(8,2)}}-{{x.dt_txt.substr(5,2)}}-{{x.dt_txt.substr(2,2)}}  <br> </div>
+		</div>
+<!-- clase opcionesAnimacionDias animated se quita ya que en android llega hasta un max y no se ve el resto-->
+		<div  class=" datos sombreado" ng-class="{rubberBand: animacionDias, shake: !animacionDias}" ng-click="animacionDias=!animacionDias" >
+			{{x.dt_txt.substr(11,5)}} 
+			<span  class="parpadeoRapido animated" ng-class="{flip: parpadeo3}" ng-mouseover="parpadeo3=!parpadeo3" ng-mouseleave="parpadeo3=false"> <img  ng-src="http://openweathermap.org/img/w/{{x.weather[0].icon}}.png"/> </span>
+			{{Math.round(x.main.temp)}}ºC - {{x.weather[0].description}}
+			<br>  h: {{Math.round(x.main.humidity)}}% - V: {{(x.wind.speed*3.6).toFixed(2)}} km/h 
+			<span ng-if="x.rain['3h']>0" style="color:#F7621B;font-weight:bold;">
+				- Lluvia: {{x.rain['3h']}}mm
+			</span>
+			<span ng-if="x.snow['3h']>0" style="color:#F7621B;font-weight:bold;">
+				- Nieve: {{x.snow['3h']}}mm
+			</span>
+		</div>	
+	</div>
+</div>
+
+<br>
+
+
+
+
